@@ -81,6 +81,23 @@
     <div class="cs_shape cs_shape_position_2"></div>
     <div class="container">
       <div class="cs_hero_in wow fadeIn" data-wow-duration="1s" data-wow-delay="0.3s">
+        <!-- Add responsive font size -->
+        <style>
+          .cs_hero_title {
+            font-size: 2.5rem; /* Default size */
+          }
+          .cs_hero_subtitle {
+            font-size: 1.2rem; /* Default size */
+          }
+          @media (max-width: 768px) {
+            .cs_hero_title {
+              font-size: 2rem; /* Smaller size for mobile */
+            }
+            .cs_hero_subtitle {
+              font-size: 1rem; /* Smaller size for mobile */
+            }
+          }
+        </style>
         <!-- <p class="cs_hero_title_up cs_gradient_color">bUY & sell nft</p> -->
         <h1 class="cs_hero_title">Supercharge your brand with viral signature clips</h1>
         <p class="cs_hero_subtitle">If you're a busy creator with no time to edit or post consistently on social media but still recognize the need to grow your brand faster, then this is for you.</p>
