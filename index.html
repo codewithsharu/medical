@@ -41,17 +41,17 @@
                   <a href="index.html">Home</a>
                  
                 </li>
-                <li><a href="#">Services</a></li>
+                <li><a href="#services">Services</a></li>
           
                 <li><a href="#roadmap">Process</a></li>
-                <li><a href="">Testimonials</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#faq">faq</a></li>
                 
               </ul>
             </div>
           </div>
           <div class="cs_main_header_right">
-            <a href="#" class="cs_btn cs_style_1 cs_type_1">
+            <a href="#book-a-call" class="cs_btn cs_style_1 cs_type_1">
               <span>
             Get in touch
               </span>
@@ -211,7 +211,7 @@
   </div>
   <!-- End Counter -->
 
- <section class="cs_about cs_stype_2">
+ <section class="cs_about cs_stype_2" id="services">
   <div class="cs_height_120 cs_height_lg_20"></div>
   <div class="container">
     <h2 style="margin-bottom: 5%;" class="cs_section_title text-center">Services</h2>
@@ -381,8 +381,464 @@
     </div>
   </section>
   <!-- End Roadmap Section -->
+  <!-- start of testimonials -->
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Client Testimonials</title>
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+      <style>
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Poppins', sans-serif;
+          }
   
+          .testimonials-section {
+              background: transparent;
+              padding: 100px 0;
+              min-height: 100vh;
+              display: flex;
+              align-items: center;
+              position: relative;
+              overflow: hidden;
+          }
   
+          .bg-pattern {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-image: 
+                  radial-gradient(#e0e0e0 1px, transparent 1px),
+                  radial-gradient(#e0e0e0 1px, transparent 1px);
+              background-size: 50px 50px;
+              background-position: 0 0, 25px 25px;
+              opacity: 0.2;
+          }
+  
+          .container {
+              width: 100%;
+              max-width: 1200px;
+              margin: 0 auto;
+              padding: 0 20px;
+              position: relative;
+          }
+  
+          .testimonials-header {
+              text-align: center;
+              margin-bottom: 60px;
+              position: relative;
+          }
+  
+          .testimonials-header h2 {
+              font-size: 3rem;
+              font-weight: 600;
+              color: white;
+              margin-bottom: 10px;
+          }
+  
+          .testimonials-header p {
+              font-size: 1.1rem;
+              color: whitesmoke;
+              font-weight: 300;
+          }
+  
+          .testimonials-wrapper {
+              width: 100%;
+              max-width: 1000px;
+              margin: 0 auto;
+              padding: 20px 0;
+              position: relative;
+              overflow: hidden;
+          }
+  
+          .testimonials-slider {
+              display: flex;
+              transition: transform 0.5s ease;
+              width: 100%;
+          }
+  
+          .testimonial-card {
+              min-width: 100%;
+              padding: 30px;
+              background: #fff;
+              border-radius: 15px;
+              box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+              margin: 0;
+              position: relative;
+          }
+  
+          .testimonial-content {
+              display: flex;
+              gap: 20px;
+              align-items: center;
+          }
+  
+          .testimonial-image {
+              width: 100px;
+              height: 100px;
+              border-radius: 50%;
+              overflow: hidden;
+              box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+          }
+  
+          .testimonial-image img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+          }
+  
+          .testimonial-text-content {
+              flex: 1;
+          }
+  
+          .testimonial-text {
+              font-size: 1rem;
+              line-height: 1.5;
+              margin-bottom: 10px;
+              color: #444;
+          }
+  
+          .testimonial-author {
+              font-weight: 600;
+              color: #222;
+              font-size: 1.2rem;
+          }
+  
+          .testimonial-position {
+              color: #888;
+              font-size: 0.9rem;
+          }
+  
+          .nav-buttons {
+              margin-top: 20px;
+              display: flex;
+              justify-content: center;
+              gap: 20px;
+          }
+  
+          .nav-btn {
+              background: #fff;
+              border: 2px solid #ccc;
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              transition: all 0.3s ease;
+              color: #333;
+              font-size: 1.2rem;
+          }
+  
+          .nav-btn:hover {
+              background: #4f46e5;
+              border-color: #4f46e5;
+              color: white;
+              transform: translateY(-3px);
+              box-shadow: 0 10px 20px -10px rgba(79, 70, 229, 0.5);
+          }
+  
+          .progress-bars {
+              position: relative;
+              z-index: 2;
+              margin-top: 20px;
+              display: flex;
+              gap: 8px;
+              justify-content: center;
+          }
+  
+          .progress-bar {
+              width: 50px;
+              height: 4px;
+              background: #e2e8f0;
+              border-radius: 2px;
+              overflow: hidden;
+          }
+  
+          .progress-bar-fill {
+              width: 0%;
+              height: 100%;
+              background: #4f46e5;
+              transition: width 0.3s ease;
+          }
+  
+          @media (max-width: 1200px) {
+              .testimonials-wrapper {
+                  max-width: 90%;
+              }
+          }
+  
+          @media (max-width: 992px) {
+              .testimonial-card {
+                  padding: 30px;
+              }
+  
+              .testimonial-text {
+                  font-size: 1rem;
+              }
+          }
+  
+          @media (max-width: 768px) {
+              .testimonials-wrapper {
+                  max-width: 95%;
+                  padding: 10px 0;
+              }
+  
+              .testimonial-card {
+                  padding: 25px;
+              }
+  
+              .testimonial-content {
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: center;
+                  gap: 20px;
+              }
+  
+              .testimonial-image {
+                  width: 100px;
+                  height: 100px;
+              }
+  
+              .testimonial-text {
+                  font-size: 0.95rem;
+                  line-height: 1.5;
+              }
+  
+              .testimonial-author {
+                  font-size: 1.1rem;
+              }
+  
+              .testimonial-position {
+                  font-size: 0.9rem;
+              }
+  
+              .nav-buttons {
+                  margin-top: 20px;
+              }
+  
+              .nav-btn {
+                  width: 45px;
+                  height: 45px;
+              }
+          }
+  
+          @media (max-width: 576px) {
+              .testimonial-card {
+                  padding: 20px 15px;
+              }
+  
+              .testimonial-image {
+                  width: 80px;
+                  height: 80px;
+              }
+  
+              .testimonial-text {
+                  font-size: 0.9rem;
+                  line-height: 1.4;
+              }
+  
+              .nav-btn {
+                  width: 40px;
+                  height: 40px;
+              }
+          }
+  
+          @media (hover: none) {
+              .testimonial-image:hover {
+                  transform: rotate(-5deg);
+              }
+  
+              .nav-btn:hover {
+                  background: transparent;
+                  border: 2px solid #e2e8f0;
+                  color: #1e293b;
+                  transform: none;
+                  box-shadow: none;
+              }
+  
+              .testimonials-wrapper {
+                  touch-action: pan-y pinch-zoom;
+              }
+          }
+  
+          html {
+              scroll-behavior: smooth;
+          }
+  
+          .testimonials-slider {
+              user-select: none;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+          }
+  
+          @media (pointer: coarse) {
+              .testimonials-wrapper {
+                  touch-action: pan-y pinch-zoom;
+              }
+          }
+      </style>
+  </head>
+  <body>
+      <section class="testimonials-section" id="testimonials">
+          <div class="bg-pattern"></div>
+          <div class="container">
+              <div class="testimonials-header">
+                  <h2>Testimonials</h2>
+                  <p>Hear from our valued clients about their exceptional experiences</p>
+              </div>
+  
+              <div class="testimonials-wrapper">
+                  <div class="testimonials-slider">
+                      <div class="testimonial-card">
+                          <div class="testimonial-content">
+                              <div class="testimonial-image">
+                                  <img src="https://randomuser.me/api/portraits/women/23.jpg" alt="Emma Wilson">
+                              </div>
+                              <div class="testimonial-text-content">
+                                  <p class="testimonial-text">"The level of innovation and attention to detail is outstanding. Their team went above and beyond to deliver a solution that exceeded our expectations."</p>
+                                  <h4 class="testimonial-author">Emma Wilson</h4>
+                                  <p class="testimonial-position">Chief Innovation Officer</p>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="testimonial-card">
+                          <div class="testimonial-content">
+                              <div class="testimonial-image">
+                                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+                              </div>
+                              <div class="testimonial-text-content">
+                                  <p class="testimonial-text">"Working with this team has transformed our business completely. Their strategic approach and technical expertise have helped us achieve results we never thought possible. They're truly partners in our success."</p>
+                                  <h4 class="testimonial-author">Michael Chen</h4>
+                                  <p class="testimonial-position">Director of Operations</p>
+                              </div>
+                          </div>
+                      </div>
+  
+                      <div class="testimonial-card">
+                          <div class="testimonial-content">
+                              <div class="testimonial-image">
+                                  <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sophie Anderson">
+                              </div>
+                              <div class="testimonial-text-content">
+                                  <p class="testimonial-text">"The dedication to excellence and customer satisfaction is unmatched. Every interaction has been professional, and the results speak for themselves. I couldn't recommend them more highly."</p>
+                                  <h4 class="testimonial-author">Sophie Anderson</h4>
+                                  <p class="testimonial-position">Product Strategy Lead</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <div class="nav-buttons">
+                  <button class="nav-btn prev">←</button>
+                  <button class="nav-btn next">→</button>
+              </div>
+  
+              <div class="progress-bars">
+                  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+                  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+                  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+              </div>
+          </div>
+      </section>
+  
+      <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const slider = document.querySelector('.testimonials-slider');
+              const prevBtn = document.querySelector('.prev');
+              const nextBtn = document.querySelector('.next');
+              const cards = document.querySelectorAll('.testimonial-card');
+              const progressBars = document.querySelectorAll('.progress-bar-fill');
+              
+              let currentIndex = 0;
+              let touchStartX = 0;
+              let touchEndX = 0;
+  
+              function updateSlider() {
+                  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+                  updateProgressBars();
+              }
+  
+              function updateProgressBars() {
+                  progressBars.forEach((bar, index) => {
+                      bar.style.width = index === currentIndex ? '100%' : '0%';
+                  });
+              }
+  
+              function slideNext() {
+                  currentIndex = (currentIndex + 1) % cards.length;
+                  updateSlider();
+              }
+  
+              function slidePrev() {
+                  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+                  updateSlider();
+              }
+  
+              // Touch events
+              slider.addEventListener('touchstart', (e) => {
+                  touchStartX = e.touches[0].clientX;
+              }, { passive: true });
+  
+              slider.addEventListener('touchend', (e) => {
+                  touchEndX = e.changedTouches[0].clientX;
+                  handleSwipe();
+              }, { passive: true });
+  
+              function handleSwipe() {
+                  const swipeDistance = touchStartX - touchEndX;
+                  const threshold = 50;
+  
+                  if (Math.abs(swipeDistance) > threshold) {
+                      if (swipeDistance > 0) {
+                          slideNext();
+                      } else {
+                          slidePrev();
+                      }
+                  }
+              }
+  
+              // Button events
+              prevBtn.addEventListener('click', slidePrev);
+              nextBtn.addEventListener('click', slideNext);
+  
+              // Initialize
+              updateSlider();
+  
+              // Auto-slide
+              let autoSlideInterval = setInterval(slideNext, 5000);
+  
+              // Pause on hover
+              slider.addEventListener('mouseenter', () => {
+                  clearInterval(autoSlideInterval);
+              });
+  
+              slider.addEventListener('mouseleave', () => {
+                  autoSlideInterval = setInterval(slideNext, 5000);
+              });
+  
+              // Pause on touch
+              slider.addEventListener('touchstart', () => {
+                  clearInterval(autoSlideInterval);
+              });
+  
+              slider.addEventListener('touchend', () => {
+                  autoSlideInterval = setInterval(slideNext, 5000);
+              });
+          });
+      </script>
+  </body>
+  </html>
+  <!-- end of testimonials -->
 
   <!-- Start FAQ Section -->
   <section class="cs_shape_wrap cs_faq_shapes_1 position-relative" id="faq">
@@ -484,9 +940,9 @@
     </div>
   </section>
   <!-- End FAQ Section -->
-  
+  <div id="book-a-call"></div>
   <!-- Start Footer Section -->
-  <footer class="cs_footer cs_bg_filed cs_shape_wrap cs_footer_shapes_1" data-src="assets/img/footer_bg.png">
+  <footer  class="cs_footer cs_bg_filed cs_shape_wrap cs_footer_shapes_1" data-src="assets/img/footer_bg.png">
     <div class="cs_shape cs_shape_position_1"></div>
     <div class="container wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
       <div class="cs_cta cs_style_1 cs_type_1" data-src="assets/img/cta_bg.svg">
