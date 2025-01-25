@@ -184,6 +184,12 @@
         margin: 10px 0; /* Add vertical spacing between items */
       }
     }
+
+    .radio-group {
+      display: flex;
+      align-items: center; /* Align items vertically */
+      gap: 20px; /* Space between radio buttons */
+    }
   </style>
 </head>
 
@@ -268,35 +274,17 @@
           <input type="text" id="username" name="username" required placeholder="instagram.com/abc">
         </div>
         <div class="form-group">
-          <label>What is your business? *</label>
-          <div>
-            <input type="checkbox" id="service-provider" name="business" value="Service Provider">
-            <label for="service-provider">Service Provider</label>
-          </div>
-          <div>
-            <input type="checkbox" id="entrepreneur" name="business" value="Entrepreneur">
-            <label for="entrepreneur">Entrepreneur</label>
-          </div>
-          <div>
-            <input type="checkbox" id="content-creator" name="business" value="Content Creator">
-            <label for="content-creator">Content Creator</label>
-          </div>
-          <div>
-            <input type="checkbox" id="consultant" name="business" value="Consultant">
-            <label for="consultant">Consultant</label>
-          </div>
-          <div>
-            <input type="checkbox" id="online-coach" name="business" value="Online Coach">
-            <label for="online-coach">Online Coach</label>
-          </div>
-          <div>
-            <input type="checkbox" id="personal-trainer" name="business" value="Personal Trainer">
-            <label for="personal-trainer">Personal Trainer</label>
-          </div>
-          <div>
-            <input type="checkbox" id="other" name="business" value="Other">
-            <label for="other">Other</label>
-          </div>
+          <label for="business">What is your business? *</label>
+          <select id="business" name="business" required>
+            <option value="" disabled selected>Select your business</option>
+            <option value="Service Provider">Service Provider</option>
+            <option value="Entrepreneur">Entrepreneur</option>
+            <option value="Content Creator">Content Creator</option>
+            <option value="Consultant">Consultant</option>
+            <option value="Online Coach">Online Coach</option>
+            <option value="Personal Trainer">Personal Trainer</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="obstacle">What's the biggest obstacle holding you back from achieving your goal right now? *</label>
@@ -304,13 +292,15 @@
         </div>
         <div class="form-group">
           <label>Will you let us know in case you can't show up to the call, or if you have to reschedule? *</label>
-          <div>
-            <input type="radio" id="yes" name="show-up" value="Yes" required>
-            <label for="yes">Yes</label>
-          </div>
-          <div>
-            <input type="radio" id="no" name="show-up" value="No" required>
-            <label for="no">No</label>
+          <div class="radio-group">
+            <div>
+              <input type="radio" id="yes" name="show-up" value="Yes" required>
+              <label for="yes">Yes</label>
+            </div>
+            <div>
+              <input type="radio" id="no" name="show-up" value="No" required>
+              <label for="no">No</label>
+            </div>
           </div>
         </div>
         <button class="form-submit-btn" type="submit">Submit</button>
