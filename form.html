@@ -31,13 +31,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      position: relative;
+      height: auto;
+      padding: 20px;
+      margin-top: 100px;
     }
 
     .custom-form-container {
-      width: 90%;
-      max-width: 800px;
+      width: 100%;
+      max-width: 500px;
       background: linear-gradient(#212121, #212121) padding-box,
                   linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
       border: 2px solid transparent;
@@ -65,7 +66,8 @@
     .custom-form-container .form-group {
       display: flex;
       flex-direction: column;
-      gap: 2px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
     .custom-form-container .form-group label {
@@ -76,26 +78,15 @@
       font-size: 12px;
     }
 
-    .custom-form-container .form-group input {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 8px;
-      color: #fff;
-      font-family: inherit;
-      background-color: transparent;
-      border: 1px solid #414141;
-    }
-
+    .custom-form-container .form-group input,
     .custom-form-container .form-group textarea {
       width: 100%;
       padding: 12px 16px;
       border-radius: 8px;
-      resize: none;
       color: #fff;
-      height: 96px;
-      border: 1px solid #414141;
-      background-color: transparent;
       font-family: inherit;
+      background-color: transparent;
+      border: 1px solid #414141;
     }
 
     .custom-form-container .form-group input::placeholder {
@@ -146,6 +137,53 @@
         width: 100%;
       }
     }
+
+    /* Updated styles for the navigation bar */
+    .cs_nav {
+      display: flex;
+      justify-content: space-between; /* Space out items evenly */
+      align-items: center; /* Center items vertically */
+      flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+      padding: 10px; /* Add padding for better spacing */
+    }
+
+    .cs_nav_list {
+      display: flex;
+      list-style: none; /* Remove default list styling */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+      flex-grow: 1; /* Allow the list to grow and take available space */
+      justify-content: center; /* Center the nav items */
+    }
+
+    .cs_nav_list li {
+      margin: 0 15px; /* Add spacing between menu items */
+    }
+
+    .cs_nav_list a {
+      text-decoration: none; /* Remove underline from links */
+      color: white; /* Set link color */
+      font-weight: 600; /* Make links bold */
+      padding: 5px 10px; /* Add padding for clickable area */
+    }
+
+    /* Media Queries for Smaller Screens */
+    @media (max-width: 768px) {
+      .cs_nav {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start */
+      }
+
+      .cs_nav_list {
+        flex-direction: column; /* Stack menu items vertically */
+        width: 100%; /* Full width for the menu */
+        align-items: flex-start; /* Align items to the start */
+      }
+
+      .cs_nav_list li {
+        margin: 10px 0; /* Add vertical spacing between items */
+      }
+    }
   </style>
 </head>
 
@@ -155,7 +193,7 @@
     <span>Loading</span>
   </div>
   <!-- Start Header Section -->
-  <header class="cs_site_header cs_style_1 cs_primary_color cs_sticky_header">
+  <header class="cs_site_header cs_style_1 cs_primary_color cs_sticky_header" style="margin-bottom: 100px;">
     <div class="cs_main_header">
       <div class="container">
         <div class="cs_main_header_in">
@@ -210,12 +248,70 @@
     <div class="form-container custom-form-container">
       <form class="form">
         <div class="form-group">
-          <label for="email">Company Email</label>
-          <input type="text" id="email" name="email" required="" placeholder="Enter your company email">
+          <label for="first-name">First Name</label>
+          <input type="text" id="first-name" name="first-name" required placeholder="Enter your first name">
         </div>
         <div class="form-group">
-          <label for="textarea">How Can We Help You?</label>
-          <textarea name="textarea" id="textarea" rows="10" cols="50" required="" placeholder="Describe your needs here..."></textarea>
+          <label for="last-name">Last Name</label>
+          <input type="text" id="last-name" name="last-name" required placeholder="Enter your last name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="example@example.com">
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+971 500000000">
+        </div>
+        <div class="form-group">
+          <label for="username">What's your IG/TikTok username? *</label>
+          <input type="text" id="username" name="username" required placeholder="instagram.com/abc">
+        </div>
+        <div class="form-group">
+          <label>What is your business? *</label>
+          <div>
+            <input type="checkbox" id="service-provider" name="business" value="Service Provider">
+            <label for="service-provider">Service Provider</label>
+          </div>
+          <div>
+            <input type="checkbox" id="entrepreneur" name="business" value="Entrepreneur">
+            <label for="entrepreneur">Entrepreneur</label>
+          </div>
+          <div>
+            <input type="checkbox" id="content-creator" name="business" value="Content Creator">
+            <label for="content-creator">Content Creator</label>
+          </div>
+          <div>
+            <input type="checkbox" id="consultant" name="business" value="Consultant">
+            <label for="consultant">Consultant</label>
+          </div>
+          <div>
+            <input type="checkbox" id="online-coach" name="business" value="Online Coach">
+            <label for="online-coach">Online Coach</label>
+          </div>
+          <div>
+            <input type="checkbox" id="personal-trainer" name="business" value="Personal Trainer">
+            <label for="personal-trainer">Personal Trainer</label>
+          </div>
+          <div>
+            <input type="checkbox" id="other" name="business" value="Other">
+            <label for="other">Other</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="obstacle">What's the biggest obstacle holding you back from achieving your goal right now? *</label>
+          <textarea id="obstacle" name="obstacle" rows="4" required placeholder="Describe your obstacle..."></textarea>
+        </div>
+        <div class="form-group">
+          <label>Will you let us know in case you can't show up to the call, or if you have to reschedule? *</label>
+          <div>
+            <input type="radio" id="yes" name="show-up" value="Yes" required>
+            <label for="yes">Yes</label>
+          </div>
+          <div>
+            <input type="radio" id="no" name="show-up" value="No" required>
+            <label for="no">No</label>
+          </div>
         </div>
         <button class="form-submit-btn" type="submit">Submit</button>
       </form>
